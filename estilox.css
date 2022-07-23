@@ -1,0 +1,291 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Open Sans',sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.contenedor {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 90px auto;
+    grid-template-rows: 60px 60px auto;
+    grid-template-areas: "header header"
+                        "menu categorias"
+                        "menu contenido";
+    transition: all .3s ease;
+}
+
+.contenedor.active{
+grid-template-columns: 300px auto;
+}
+
+/*Header*/
+
+.header {
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px;
+    grid-template-areas:"logo busqueda iconos";
+}
+
+.header .contenedor-logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+.header .contenedor-logo .logo .fas {
+    background: #ff0000;
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 8px;
+    color: #fff;
+    position: relative;
+    top: -4px;
+    margin-right: 4px;
+}
+
+.header .contenedor-logo .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+
+}
+
+.header .contenedor-logo .boton-menu {
+    border: none;
+    padding: 15px;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    
+
+}
+
+.header .contenedor-logo .boton-menu:hover{
+    background:#e7e7e7;
+}
+
+.header .barra-busqueda {
+    grid-area: busqueda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
+}
+
+.header .barra-busqueda input{
+    min-width: 40%;
+    padding:0 15px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family:'Open Sans', sans-serif;
+}
+
+.header .barra-busqueda button{
+    height: 35px;
+    border: 1px solid #ccc;
+    border-left: none ;
+    color: #545454;
+    background: #f8f8f8;
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.header .barra-busqueda button:hover {
+    background: #f5f5f5;
+}
+
+.header .botones-header {
+    grid-area: iconos;
+    display: flex;
+    align-items: center;
+
+}
+
+.header .botones-header button {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    padding: 7px 12px;
+    border-radius: 100px;
+    color: #828282;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header .botones-header button:hover {
+    background: #e7e7e7;
+}
+
+.header .botones-header .avatar {
+   width: 30px;
+   height: 30px;
+   display: inline-block;
+}
+
+.header .botones-header .avatar img {
+    vertical-align: top;
+    width: 100%;
+    border-radius: 100px;
+}
+
+/*Menu Lateral*/
+.menu-lateral {
+    grid-area: menu;
+    background: white;
+    overflow: hidden;
+}
+
+.menu-lateral a{
+    display: block;
+    padding: 15px 35px;
+    color: black;
+    min-width: 800px;
+}
+
+.menu-lateral a:hover {
+   background: #e5e5e5;
+}
+
+.menu-lateral a.active {
+    background: #e5e5e5;
+    font-weight: bold;
+}
+
+.menu-lateral .fas {
+    color: #606060;
+    margin-right: 32px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-lateral a.active .fas {
+    color: #ff0000;
+}
+
+
+.menu-lateral .fa-solid {
+    color: #606060;
+    margin-right: 32px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-lateral .fa-regular {
+    color: #606060;
+    margin-right: 32px;
+    width: 20px;
+    text-align: center;
+}
+
+/*Categorias*/
+
+.categorias {
+    grid-area: categorias;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 100px;
+    grid-template-columns:fr fr ;
+    background:white
+    
+}
+
+.categorias .text {
+   min-width: 10%;
+   min-height: 2%;
+    font-size: 15px;
+    padding: 0 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    margin: 15px;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.categorias .text button:hover{
+    background: #545454;
+}
+
+/*Contenido Principal*/
+
+.main {
+    grid-area: contenido;
+    background: #f9f9f9;
+    padding: 15px;
+}
+
+.main .titulo {
+    margin-bottom: 20px;
+}
+
+.main .videos {
+    display:flex;
+    justify-content: space-between; 
+}
+
+.main .videos .video {
+    width: 50%;
+    display:block;
+}
+
+.main .videos .video img {
+    width: 50%;
+}
+
+.main .videos2 {
+    display:flex;
+    justify-content: space-between;
+   
+}
+
+.main .videos2 .video {
+    width: 50%;
+    display:block;
+
+}
+
+.main .videos2 .video img {
+    width: 50%;
+}
+
+.main .videos3 {
+    display:flex;
+    justify-content: space-between;
+   
+}
+
+.main .videos3 .video {
+    width: 50%;
+    display:block;
+
+}
+
+.main .videos3 .video img {
+    width: 50%;
+}
